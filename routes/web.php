@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProjectController;
+use App\Http\Controllers\FormValidationController;
 
 
 /*
@@ -26,4 +27,8 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 // Route::get('/', [ProjectController::class, 'index']);
 
-Route::resource('/projects', ProjectController::class);
+Route::get('/projects', [App\Http\Controllers\ProjectController::class]);
+
+Route::get('/form', [FormValidationController::class, 'createUserForm']);
+Route::post('/form', [FormValidationController::class, 'UserForm'])->name('validate.form');
+
