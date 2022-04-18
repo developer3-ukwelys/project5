@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\FormValidationController;
+use App\Http\controllers\StudentController;
+
 
 
 /*
@@ -32,3 +34,4 @@ Route::get('/projects', [App\Http\Controllers\ProjectController::class]);
 Route::get('/form', [FormValidationController::class, 'createUserForm']);
 Route::post('/form', [FormValidationController::class, 'UserForm'])->name('validate.form');
 
+Route::get('/students', [StudentController::class, 'fetchStudents']);
