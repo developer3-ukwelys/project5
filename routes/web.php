@@ -35,3 +35,4 @@ Route::get('/form', [FormValidationController::class, 'createUserForm']);
 Route::post('/form', [FormValidationController::class, 'UserForm'])->name('validate.form');
 
 Route::get('/students', [StudentController::class, 'fetchStudents']);
+Route::get('/insert', [StudentController::class, 'insertdata']);
