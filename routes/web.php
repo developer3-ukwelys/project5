@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\FormValidationController;
 use App\Http\controllers\StudentController;
-
+use App\Http\Controllers\FIleUploadController;
 
 
 /*
@@ -36,3 +36,6 @@ Route::post('/form', [FormValidationController::class, 'UserForm'])->name('valid
 
 Route::get('/students', [StudentController::class, 'fetchStudents']);
 Route::get('/insert', [StudentController::class, 'insertdata']);
+
+Route::get('file-upload',[FileUploadController::class,'index']);
+Route::post('store',[FileUploadController::class,'store']);
